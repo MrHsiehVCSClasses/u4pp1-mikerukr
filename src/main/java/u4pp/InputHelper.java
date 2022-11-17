@@ -8,16 +8,15 @@ public class InputHelper {
         Scanner deez = new Scanner(System.in);
         System.out.println(prompt);
         String input = deez.nextLine();
-        char a = input.charAt(0);
-        if(input != "y" || input != "Y" || input != "n" || input != "N"){
+        while(input != "y" || input != "Y" || input != "n" || input != "N"){
             System.out.println(prompt);
             System.out.println("You typed: " + input);
             System.out.println("Please only enter the options y,Y,n,or N.");
             input = deez.nextLine();
         }
-        if(input == "y" || input == "Y"){
+        if(input.equals("y") || input.equals("Y")){
             return true;
-        }else if(input == "n" || input == "N"){
+        }else if(input.equals("n") || input.equals("N")){
             return false;
         }
         return false;
